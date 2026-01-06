@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Tool</title>
+    <style>
+	html { overflow-y: scroll; }
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #eef2f7;
+}
+
+        h1 { font-size: 2em; }
+        h2 { font-size: 1.2em; color: #579; }
+        button { padding: 10px 20px; font-size: 1em; cursor: pointer; }
+         nav {
+    width: 100%;              /* full-width */
+    background-color: #4CAF50;
+    padding: 10px 0;           /* hoogte van de balk */
+    margin-top: 20px;          /* afstand vanaf bovenkant */
+    text-align: center;         /* centrering van de links */
+}
+       nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">home</a> |
+        <a href="zo-werkt-het.html">zo werkt het</a> |
+        <a href="tool.html">tool</a> |
+        <a href="over.html">over</a>
+    </nav>
+
+   <div class="content">
+    <h1>De tool</h1>
+    <h2>Voer een taak in en splits automatisch in stappen</h2>
+
+    <textarea id="nieuweTaak" rows="4" cols="50" placeholder="Typ hier je volledige taak of project"></textarea><br>
+    <button onclick="voegTaakToe()">Splits nu de taak</button>
+
+<p id="focus-tekst"><strong>Je gaat nu dit doen:</strong></p>
+<p id="huidige-taak"></p>
+
+    <ul id="takenlijst"></ul>
+
+    <style>
+        #takenlijst {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        #takenlijst li {
+            background-color: #f0f0f0;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 1s, border 2s;
+        }
+
+        #takenlijst li:hover {
+            background-color: #d9f0d9;
+        }
+
+        #takenlijst li.afgevinkt {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        #takenlijst li.huidige {
+            background-color: #fffa8c; /* geel markering voor huidige taak */
+            border: 2px solid #f7e600;
+        }
+
+        textarea {
+            width: 80%;
+            padding: 10px;
+            font-size: 1em;
+        }
+
+       #huidige-taak {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+    </style>
+
+    <script>
+        
+function updateHuidigeTekst() {
+    const huidige = document.querySelector('#takenlijst li.huidige');
+    const tekstvak = document.getElementById('huidige-taak');
+
+    if (huidige) {
+        tekstvak.textContent = huidige.textContent;
+    } else {
+        tekstvak.textContent = '';
+    }
+}
+
+function voegTaakToe() {
+    const invoer = document.getElementById('nieuweTaak');
+    const tekst = invoer.value.trim();
+    if (tekst === '') return;
+
+    const subTaken = tekst.split('.').map(s => s.trim()).filter(s => s !== '');
+
+    subTaken.forEach((sub, index) => {
+        const li = document.createElement('li');
+        li.textContent = sub;
+
+        if (index === 0 && document.getElementById('takenlijst').children.length === 0) {
+            li.classList.add('huidige');
+        }
+
+        li.onclick = function () {
+            li.classList.toggle('afgevinkt');
+
+            if (li.classList.contains('afgevinkt')) {
+                li.classList.remove('huidige');
+                const volgende = li.nextElementSibling;
+                if (volgende) {
+                    volgende.classList.add('huidige');
+                }
+            }
+
+            updateHuidigeTekst();
+        };
+
+        document.getElementById('takenlijst').appendChild(li);
+    });
+
+    invoer.value = '';
+    updateHuidigeTekst();
+}
+
+
+
+    </script>
+   </div>
+</body>
+
+
+</html>
+

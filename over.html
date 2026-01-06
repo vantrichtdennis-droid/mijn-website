@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Over ADHD Focus</title>
+    <style>
+	html { overflow-y: scroll; }
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #eef2f7;
+}
+
+        nav {
+    width: 100%;              /* full-width */
+    background-color: #4CAF50;
+    padding: 10px 0;           /* hoogte van de balk */
+    margin-top: 20px;          /* afstand vanaf bovenkant */
+    text-align: center;         /* centrering van de links */
+}
+
+        nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+       .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.1em;
+            color: #679;
+            text-align: center; /* als je wilt dat het gecentreerd wordt */
+            margin-bottom: 5px; /* optioneel voor ruimte onder de kop */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">home</a> |
+        <a href="zo-werkt-het.html">zo werkt het</a> |
+        <a href="tool.html">tool</a> |
+        <a href="over.html">over</a>
+    </nav>
+
+<div class="content">
+    <h1>Over dit project</h1>
+
+    <h2>Oriëntatie: idee en doel van de site</h2>
+    <p>
+        Het project begon niet technisch, maar inhoudelijk. Ik wilde een eenvoudige website maken die gebruikers met ADHD helpt om taken te verkleinen en focus te behouden. De kern was bewust níet allesomvattend, maar gericht op rust, overzicht en dwingende eenvoud. Dit uitgangspunt bepaalde later veel technische keuzes.
+    </p>
+
+    <h2>Eerste kennismaking met HTML-bestanden</h2>
+    <p>
+        Ik begon met losse bestanden zoals index.html, later gevolgd door tool.html en zo-werkt-het.html. Al snel liep ik vast doordat Windows bestandsextensies verbergt. HTML-bestanden werden onbedoeld .txt. Dit bleek geen programmeerfout, maar een systeeminstelling. Ik leerde hier dat problemen niet altijd in de code zitten, maar soms in de omgeving.
+    </p>
+
+    <h2>Eerst structuur, nog geen functionaliteit</h2>
+    <p>
+        De pagina’s werden eerst opgebouwd zonder dynamiek. Ik ontdekte dat HTML vooral gaat over structuur en inhoud, en dat een website ook zonder JavaScript al betekenisvol kan zijn. Dat gaf rust en overzicht.
+    </p>
+
+    <h2>CSS als aparte laag leren begrijpen</h2>
+    <p>
+        Bij het toevoegen van &lt;style&gt; raakte ik in de war over waar code thuishoort. Door CSS soms verkeerd te plaatsen, werd duidelijk dat CSS beschrijft hoe iets eruitziet en geen acties uitvoert. Dit onderscheid moest ik letterlijk al doende leren.
+    </p>
+
+    <h2>Navigatie en meerdere pagina’s koppelen</h2>
+    <p>
+        Door pagina’s met elkaar te verbinden via &lt;a href&gt; begreep ik dat een website bestaat uit losse bestanden die samen één geheel vormen. Kleine typfouten zorgden meteen voor fouten, wat precisie ineens heel concreet maakte.
+    </p>
+
+    <h2>JavaScript introduceren</h2>
+    <p>
+        JavaScript kwam pas later. Ik twijfelde of dit niet te complex zou worden, maar door klein te beginnen (een knop met onclick) werd duidelijk wat “dynamisch” eigenlijk betekent: reageren op gebruikersgedrag.
+    </p>
+
+    <h2>Eerste echte bug: dubbele functies</h2>
+    <p>
+        Op de tool-pagina werkte de code niet goed doordat dezelfde functie twee keer bestond. De site deed iets, maar niet wat ik verwachtte. Dit maakte scherp dat code niets “interpreteert”: dubbel is fout.
+    </p>
+
+    <h2>Oplossing door schrappen</h2>
+    <p>
+        Het probleem werd niet opgelost door meer code toe te voegen, maar door code te verwijderen. Dat inzicht was belangrijk: eenvoud is soms de echte oplossing.
+    </p>
+
+    <h2>UX-aanpassingen</h2>
+    <p>
+        Met hover-effecten, markeringen en animatie zag ik hoe kleine technische ingrepen grote invloed hebben op gebruikerservaring. Mijn focus verschoof van “werkt het?” naar “wat doet dit met de gebruiker?”
+    </p>
+
+    <h2>De ‘over’-pagina als reflectie</h2>
+    <p>
+        De website werd ook een plek om mijn eigen leerproces te beschrijven. Daarmee werd de site niet alleen een product, maar ook een reflectiemiddel.
+    </p>
+
+    <h2>Verwarring rond body</h2>
+    <p>
+        De navigatiebalk gedroeg zich anders op één pagina. Door fouten, dubbele &lt;body&gt;-tags en verkeerd geplaatste CSS begreep ik uiteindelijk dat alles wat zichtbaar is binnen body valt, inclusief de navigatie.
+    </p>
+
+    <h2>Vergelijken als strategie</h2>
+    <p>
+        Ik begon pagina’s naast elkaar te leggen en verschillen in code te analyseren. Dit deed ik zelfstandig. Hier merkte ik dat ik niet meer alleen uitvoerde, maar echt problemen oploste.
+    </p>
+
+    <h2>Inzicht in scrollbalken</h2>
+    <p>
+        Ik ontdekte dat een verticale scrollbalk invloed heeft op centrering en layout. Dat was een belangrijk inzicht: niet elk verschil komt door mijn code, soms door de browser.
+    </p>
+
+    <h2>Van losse regels naar hiërarchie</h2>
+    <p>
+        Ik begon te begrijpen dat body de basis vormt, p automatisch volgt en elementen als nav en h1 daarvan kunnen afwijken. Dat gaf structuur aan mijn denken over code.
+    </p>
+
+    <h2>Afronding: durven rommelen</h2>
+    <p>
+        Ik maakte fouten, haalde dingen weg, zette ze terug en begreep steeds beter waarom iets werkte of niet. Dat rommelen bleek geen zwakte, maar een noodzakelijke stap in leren programmeren.
+    </p>
+
+    <h2>Samenvatting</h2>
+    <p>
+        De belangrijkste opbrengst is niet een perfecte website, maar dat ik nu kan uitleggen waarom iets werkt of niet, fouten zie als informatie en zelfstandig code durf te analyseren en herstellen. Daarmee heb ik mijn digitale geletterdheid daadwerkelijk verdiept.
+    </p>
+    </div>
+  </body>
+</html>
+
